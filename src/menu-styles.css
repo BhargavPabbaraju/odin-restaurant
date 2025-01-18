@@ -1,14 +1,48 @@
 
 .menu{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 16px;
 }
 
 .menu-item{
-
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: large;
+    background:#D0F0FC;
+    padding: 16px;
+    border: 1px dashed grey;
+    border-radius: 4px;
 }
 
+
+.menu-item div{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+}
+
+
+
+.menu-item span{
+    font-weight:800;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+.menu-item span::after{
+    content: url('../assets/berry.png');
+    position:relative;
+    bottom:-0.1rem;
+}
+
+
 .menu-item img{
-    width: 100px;
-    height: 100px;
+    width: 50%;
+    height: 100%;
 }

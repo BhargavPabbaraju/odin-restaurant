@@ -32,7 +32,7 @@ const menuItems = [
         price: 400,
     },
     {
-        name: "Smile fruit",
+        name: "SMILE fruit",
         image: smileImage,
         description: "SMILE fruits are deliberately used as a food source at Ebisu Town in Wano Country (passed off as ordinary fruits to most of the population). Most SMILE fruits grant absolutely no powers to eaters and instead leave them unable to express negative emotions as a side-effect.",
         price: 150,        
@@ -46,6 +46,38 @@ const menuItems = [
 ];
 
 
+function createMenuItem(food){
+    const menuItem = document.createElement("div");
+    menuItem.classList.add("menu-item");
+    
+    const topRow = document.createElement("div");
+    const bottomRow = document.createElement("div");
+
+    const name = document.createElement("h3");
+    name.innerText = food.name;
+    name.classList.add("custom-font");
+
+    const image = document.createElement("img");
+    image.src = food.image;
+
+    const price = document.createElement("span");
+    price.innerText = food.price;
+
+    const description = document.createElement("p");
+    description.innerText = food.description;
+
+    topRow.appendChild(name);
+    topRow.appendChild(price);
+
+    bottomRow.appendChild(image);
+    bottomRow.appendChild(description);
+
+    menuItem.appendChild(topRow);
+    menuItem.appendChild(bottomRow);
+
+    return menuItem;
+}
+
 export function renderContent(){
     const content = document.getElementById("content");
 
@@ -53,21 +85,9 @@ export function renderContent(){
     menu.classList.add("menu");
     
     menuItems.forEach((food)=>{
-        const menuItem = document.createElement("div");
-        menuItem.classList.add("menu-item");
-
-        const menuName = document.createElement("p");
-        menuName.innerText = food.name;
-
-        const menuImage = document.createElement("img");
-        menuImage.src = food.image;
-
-        menuItem.appendChild(menuName);
-        menuItem.appendChild(menuImage);
-
+        const menuItem = createMenuItem(food);
         menu.appendChild(menuItem);
-
-    })
+    });
     
     content.appendChild(menu);
 

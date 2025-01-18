@@ -1,9 +1,9 @@
 import * as home from "./home";
 import * as menu from "./menu";
-import * as about from "./about";
+import * as contact from "./contact";
 import "./styles.css";
 
-const navOptions = ["home","menu","about"];
+const navOptions = ["home","menu","contact"];
 
 
 function navigate(to){
@@ -18,8 +18,8 @@ function navigate(to){
             menu.renderContent();
             break;
         }
-        case "about":{
-            about.renderContent();
+        case "contact":{
+            contact.renderContent();
             break;
         }
         default:{
