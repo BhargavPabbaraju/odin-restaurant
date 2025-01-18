@@ -1,0 +1,14 @@
+
+.menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item{
+
+}
+
+.menu-item img{
+    width: 100px;
+    height: 100px;
+}
